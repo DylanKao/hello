@@ -8,3 +8,7 @@
   - name: Hello World!
     shell: echo "Hi!  AWX is working"
     sudo: yes
+    
+  - name: install mysql
+    yum: name=mysql state=latest
+    sudo: yes
