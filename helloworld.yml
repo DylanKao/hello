@@ -1,9 +1,10 @@
 ---
 - name: Hello World!
   hosts: all
-  user: root
+  user: dylan_kao
  
   tasks:
  
   - name: Hello World!
     shell: echo "Hi!  AWX is working"
+    sudo: yes
