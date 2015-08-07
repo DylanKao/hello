@@ -7,10 +7,12 @@
  
 - name: Install the latest version of MySQL
   yum: name=mysql state=latest
+  sudo: yes
 
 - name: Install the latest version of MySQL Server
   yum: name=mysql-server state=latest
-
+  sudo: yes
+  
 - name: Start MySQL Server
   raw: chkconfig mysqld on
   sudo: yes
@@ -21,8 +23,10 @@
  
 - name: Install the latest version of MySQL Python
   yum: name=MySQL-python state=latest
+  sudo: yes
   
 - name: Set the mysql root password
   mysql_user: name=root
               password=root
               host=localhost
+  sudo: yes
