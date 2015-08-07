@@ -1,14 +1,28 @@
 ---
-- name: Hello World!
+- name: isntall My SQL
   hosts: all
   user: dylan_kao
  
   tasks:
  
-  - name: Hello World!
-    shell: echo "Hi!  AWX is working"
-    sudo: yes
-    
-  - name: install mysql
-    yum: name=mysql state=latest
-    sudo: yes
+- name: Install the latest version of MySQL
+  yum: name=mysql state=latest
+
+- name: Install the latest version of MySQL Server
+  yum: name=mysql-server state=latest
+
+- name: Start MySQL Server
+  raw: chkconfig mysqld on
+  sudo: yes
+  
+- name: Set MySQL Server On
+  raw: /sbin/service mysqld start
+  sudo: yes 
+ 
+- name: Install the latest version of MySQL Python
+  yum: name=MySQL-python state=latest
+  
+- name: Set the mysql root password
+  mysql_user: name=root
+              password=root
+              host=localhost
