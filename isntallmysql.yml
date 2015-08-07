@@ -6,10 +6,10 @@
  
   tasks:
   
-- name: Hello World!
-  shell: echo "Hi!  AWX is working"
-  sudo: yes
+  - name: Hello World!
+    shell: echo "Hi!  AWX is working"
+    sudo: yes
  
-- name: Install the latest version of MySQL
-  yum: name=mysql state=latest
-  sudo: yes
+  - name: Install the latest version of MySQL
+    yum: name=mysql state=latest
+    sudo: yes
