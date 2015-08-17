@@ -39,6 +39,5 @@
   - unarchive: src="/tmp/0.3.0_linux_amd64.zip" dest=/opt/consul/bin copy=no
     sudo: yes
 
-  - file: state=link src= /opt/consul/bin/consul dest=/usr/bin/consul
-    force: yes
+  - file: state=link src= /opt/consul/bin/consul dest=/usr/bin/consul force= yes
     sudo: yes
