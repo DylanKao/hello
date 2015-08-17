@@ -40,6 +40,6 @@
     copy: no
     sudo: yes
 
-  - file: state: link src= /opt/consul/bin/consul dest=/usr/bin/consul
+  - file: state=link src= /opt/consul/bin/consul dest=/usr/bin/consul
     force: yes
     sudo: yes
