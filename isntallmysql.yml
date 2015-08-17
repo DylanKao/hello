@@ -33,6 +33,33 @@
     sudo: yes 
     
   - name: download consul
-    get_url: url=https://dl.bintray.com/mitchellh/consul/0.3.0_linux_amd64.zip dest=/tmp/0.3.0_linux_amd64.zip mode=0777
-    sudo: yes 
+    get_url:
+    url: "https://dl.bintray.com/mitchellh/consul/0.3.0_linux_amd64.zip"
+    dest: "/tmp/0.3.0_linux_amd64.zip"
+
+  - unarchive:
+    src: "/tmp/0.3.0_linux_amd64.zip"
+    dest: /opt/consul/bin
+    copy: no
+
+  - file:
+    state: link
+    src: /opt/consul/bin/consul
+    dest: /usr/bin/consul
+    force: yes
+    
+  - get_url:
+    url: "https://dl.bintray.com/mitchellh/consul/0.3.0_web_ui.zip"
+    dest: "/tmp/0.3.0_web_ui.zip"
+
+- unarchive:
+    src: "/tmp/0.3.0_web_ui.zip"
+    dest: "/opt/consul/ui-0.3.0"
+    copy: no
+
+- file:
+    state: link
+    src: "/opt/consul/ui-0.3.0"
+    dest: /opt/consul/ui
+    force: yes
     
