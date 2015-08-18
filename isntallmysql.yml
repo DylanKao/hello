@@ -1,6 +1,6 @@
 ---
 
-- name: isntall My SQL
+- name: install My SQL
   hosts: all
   user: dylan_kao
  
