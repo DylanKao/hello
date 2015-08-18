@@ -46,5 +46,5 @@
   - unarchive: src="/tmp/0.3.0_web_ui.zip" dest=/opt/consul/ui copy=no
     sudo: yes
     
-  - copy: src=/tmp/consul dest=/usr/sbin/consul mode=0777
+  - copy: src=/tmp/consul dest=/usr/sbin/consul
     sudo: yes
