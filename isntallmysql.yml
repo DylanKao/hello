@@ -39,7 +39,7 @@
   - unarchive: src="/tmp/0.3.0_linux_amd64.zip" dest=/opt/consul/bin copy=no
     sudo: yes
 
-  - copy: src=/opt/consul/bin/consul dest=/usr/sbin/ mode=0777
+  - copy: src=/opt/consul/bin/consul dest=/usr/bin/consul mode=0777
     sudo: yes
 
   - name: download consul ui
