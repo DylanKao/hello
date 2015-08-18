@@ -36,7 +36,7 @@
     get_url: url="https://dl.bintray.com/mitchellh/consul/0.3.0_linux_amd64.zip" dest="/tmp/0.3.0_linux_amd64.zip"
     sudo: yes
 
-  - unarchive: src="/tmp/0.3.0_linux_amd64.zip" dest=/opt/consul/bin copy=no
+  - unarchive: src="/tmp/0.3.0_linux_amd64.zip" dest=/tmp/ copy=no
     sudo: yes
 
   - name: download consul ui
@@ -46,5 +46,5 @@
   - unarchive: src="/tmp/0.3.0_web_ui.zip" dest=/opt/consul/ui copy=no
     sudo: yes
     
-  - copy: src=/opt/consul/bin/consul dest=/usr/sbin/consul mode=0777
+  - copy: src=/tmp/consul dest=/usr/sbin/consul mode=0777
     sudo: yes
